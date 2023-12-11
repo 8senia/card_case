@@ -1,0 +1,328 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+body {
+  margin: 0;
+  color: #001524;
+  font-family: roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.card-container {
+  box-sizing: border-box;
+  min-width: 1366px;
+  max-width: 1366px;
+  padding-left: 98px;
+  padding-top: 98px;
+}
+.gallery-wrapper {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.gallery-preview {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+}
+.preview-item {
+  padding-right: 30px;
+  width: 170px;
+  padding-bottom: 15px;
+}
+.preview-item.last-child {
+  margin-bottom: 0;
+}
+.gallery {
+  padding: 110px 87px;
+}
+.active-img {
+  width: 500px;
+  height: 870px;
+  margin-right: 70px;
+}
+.card-info__title {
+  width: 400px;
+  height: 72;
+  color: #001524;
+  font-family: roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+}
+.card-info__rate {
+  display: flex;
+  align-items: center;
+}
+.card-info__availability {
+  color: #001524;
+  font-family: roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.card-info__stars star-rate {
+  margin-right: 15px;
+}
+.link {
+  text-decoration: none;
+  color: #001524;
+  font-family: roboto;
+  font-size: 14px;
+  font-weight: 500;
+}
+.color-chooser {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 2px solid gray;
+}
+.color-chooser__item {
+  position: relative;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  background-color: #000000;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: initial;
+  cursor: pointer;
+}
+.color-chooser__item::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  box-sizing: border-box;
+  width: calc(
+    30px + 5px * 2
+  ); /* вычисляем: размер элемента и два раза по
+отступу 5 пикселей */
+  height: calc(30px + 5px * 2);
+  background-color: inherit; /* унаследовать фон у элемента */
+}
+.color-chooser__item::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  box-sizing: border-box;
+  width: calc(30px + 5px * 2);
+  height: calc(30px + 5px * 2);
+  border: 5px solid #ffffff;
+}
+.color-chooser__item:checked::after {
+  top: -4px;
+  left: -4px;
+  width: calc(
+    30px + 4px * 2
+  ); /* вычисление: на 1 пиксель меньше, чтобы
+осталась рамка */
+  height: calc(30px + 4px * 2);
+  border: 4px solid #ffffff;
+}
+.color-chooser__item:not(:last-child) {
+  margin-right: 18px;
+}
+/* компонент — выбор размера */
+.size-chooser {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 2px solid gray;
+}
+.size-chooser__label {
+  box-sizing: border-box;
+  width: 61px;
+  height: 29px;
+  transition: border-color 0.2s ease-in-out 0s;
+  border: 1px solid rgba(22, 22, 26, 0.1);
+  color: #16161a;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 31px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.size-chooser__label:not(:last-child) {
+  margin-right: 10px;
+}
+.size-chooser__label:hover {
+  transition: border-color 0.2s ease-in-out 0s;
+  border-color: #16161a;
+}
+.size-chooser__item {
+  display: none;
+  /* сами радиокнопки не должно быть видно */
+}
+.size-chooser__item:checked + .size-chooser__label {
+  border-color: #16161a;
+  /* касается лейбла, только если прямо перед ним стоит выбранная радиокнопка
+*/
+}
+.card-info__data-list {
+  border-bottom: 2px solid gray;
+}
+.card-info__subtitle {
+  font-family: roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.card-info__subtitle all {
+  font-family: roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 23px;
+  margin-bottom: 18px;
+}
+.h {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data-list__row {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 0px;
+}
+.data-list dt {
+  color: #797d80;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+.data-list dd {
+  color: #001524;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 34px;
+}
+.price {
+  color: #001524;
+  font-family: roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0px;
+  margin: 0px;
+}
+.figures {
+  color: #1c1919;
+  font-family: roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card-info__button-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-info__red {
+  width: 400px;
+  height: 52px;
+  background: #de012c;
+  border-radius: 4px;
+  color: #0d0417;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.card-info__withe {
+  width: 400px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid #de012c;
+  color: #0d0417;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 14px;
+  font-weight: 500;
+}
+span {
+  color: #de012c;
+  font-family: roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.site-navigation {
+  display: flex;
+  list-style: none;
+  border-bottom: 2px solid gray;
+  margin: 0px;
+  padding-left: 98px;
+  padding-top: 60px;
+  text-decoration: none;
+  color: #797d80;
+  font-family: roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  padding-right: 45px;
+}
+.paragraf {
+  padding-left: 98px;
+  margin-top: 30px;
+  width: 1170px;
+  color: #001524;
+  font-family: roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.active-item {
+  border-bottom: 3px solid #001524;
+  padding-bottom: 15px;
+  margin-right: 45px;
+}
+.active-itemsecond {
+  margin-right: 45px;
+}
+ul {
+  padding-inline-start: 0;
+}
